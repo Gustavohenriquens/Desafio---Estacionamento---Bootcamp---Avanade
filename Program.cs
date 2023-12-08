@@ -26,26 +26,46 @@ internal class Program
         {
             Console.Clear();
             Console.WriteLine("Digite a sua opção:");
-            Console.WriteLine("1 - Cadastrar veículo");
-            Console.WriteLine("2 - Remover veículo");
-            Console.WriteLine("3 - Listar veículos");
-            Console.WriteLine("4 - Encerrar");
+            Console.WriteLine("1 - Cadastrar Carro");
+            Console.WriteLine("2 - Cadastrar Moto");
+            Console.WriteLine("3 - Remover Carro");
+            Console.WriteLine("4 - Remover Moto");
+            Console.WriteLine("5 - Listar Carro");
+            Console.WriteLine("6 - Listar Moto");
+            Console.WriteLine("7 - Listar Carros e Motos");
+            Console.WriteLine("8 - Encerrar");
 
             switch (Console.ReadLine())
             {
                 case "1":
-                    es.AdicionarVeiculo();
+                    es.AdicionarVeiculoCarro();
                     break;
 
                 case "2":
-                    es.RemoverVeiculo();
+                    es.AdicionarVeiculoMoto();
                     break;
 
                 case "3":
-                    es.ListarVeiculos();
+                    es.RemoverVeiculoCarro();
                     break;
 
                 case "4":
+                    es.RemoverVeiculoMoto();
+                    break;
+
+                case "5":
+                    es.ListarVeiculosCarro();
+                    break;
+
+                case "6":
+                    es.ListarVeiculosMoto();
+                    break;
+
+                case "7":
+                    es.ListarTodos();
+                    break;
+
+                case "8":
                     exibirMenu = false;
                     break;
 
