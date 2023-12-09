@@ -100,12 +100,10 @@ namespace projeto_estacionamento.Models
 
         public void ListarVeiculosCarro()
         {
-            // Verifica se há veículos no estacionamento
+            // Any -> Verifica se há veículos no estacionamento
             if (veiculos.Any())
             {
                 Console.WriteLine($"Os veículos estacionados são:");
-                // TODO: Realizar um laço de repetição, exibindo os veículos estacionados = OK 
-                // *IMPLEMENTE AQUI* = OK
 
                 foreach (string item in veiculos)
                 {
@@ -121,12 +119,9 @@ namespace projeto_estacionamento.Models
 
         public void ListarVeiculosMoto()
         {
-            // Verifica se há veículos no estacionamento
             if (veiculosMoto.Any())
             {
                 Console.WriteLine($"Os veículos estacionados são:");
-                // TODO: Realizar um laço de repetição, exibindo os veículos estacionados = OK 
-                // *IMPLEMENTE AQUI* = OK
 
                 foreach (string item in veiculosMoto)
                 {
@@ -143,12 +138,10 @@ namespace projeto_estacionamento.Models
 
         public void ListarTodos()
         {
-            // Verifica se há veículos no estacionamento
+
             if (veiculosMoto.Any() || veiculos.Any())
             {
                 Console.WriteLine($"Os veículos estacionados são:");
-                // TODO: Realizar um laço de repetição, exibindo os veículos estacionados = OK 
-                // *IMPLEMENTE AQUI* = OK
 
                 foreach (string itemMoto in veiculosMoto)
                 {

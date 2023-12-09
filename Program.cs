@@ -26,7 +26,7 @@ internal class Program
         {
             Console.Clear();
             Console.WriteLine("Digite a sua opção:");
-            Console.WriteLine("1 - Cadastrar Carro");
+            Console.WriteLine("1- Cadastrar Carro");
             Console.WriteLine("2 - Cadastrar Moto");
             Console.WriteLine("3 - Remover Carro");
             Console.WriteLine("4 - Remover Moto");
