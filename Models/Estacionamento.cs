@@ -41,7 +41,7 @@ namespace projeto_estacionamento.Models
         {
             Console.WriteLine("Digite a placa do veículo para remover:");
 
-            string removePlacaCarro = Console.ReadLine().ToUpper();
+            string removePlacaCarro = Console.ReadLine().ToUpper(); 
             string placaCarro = removePlacaCarro;
             
 
@@ -91,13 +91,6 @@ namespace projeto_estacionamento.Models
 
 
 
-
-
-
-
-
-
-
         public void ListarVeiculosCarro()
         {
             // Any -> Verifica se há veículos no estacionamento
@@ -106,7 +99,8 @@ namespace projeto_estacionamento.Models
                 Console.WriteLine($"Os veículos estacionados são:");
 
                 foreach (string item in veiculos)
-                {
+                {       
+
                     Console.WriteLine($"Carro = {item}");
                 }
             }
@@ -115,6 +109,52 @@ namespace projeto_estacionamento.Models
                 Console.WriteLine("Não há veículos estacionados.");
             }
         }
+
+
+        public void VerificarQuantosCarrosTem()
+        {
+            int totalCarros = veiculos.Count;
+
+            if(totalCarros > 1)
+            {
+                Console.WriteLine($"Total de carros estacionados:");
+                Console.WriteLine($"{totalCarros} Carros estão no estacionamento.");
+            }
+            else if(totalCarros == 1)
+            {
+                Console.WriteLine($"Total de carros estacionados:");
+                Console.WriteLine($"{totalCarros} Carro está no estacionamento.");
+            }
+            else
+            {
+                Console.WriteLine("Não há carros estacionados.");
+            }
+        }
+
+
+
+        public void VerificarQuantasMotosTem()
+        {
+            int totalMotos = veiculosMoto.Count;
+
+            if(totalMotos > 1)
+            {
+                Console.WriteLine($"Total de motos estacionadas:");
+                Console.WriteLine($"{totalMotos} Motos estão no estacionamento.");
+            }
+            else if(totalMotos == 1)
+            {
+                Console.WriteLine($"Total de motos estacionadas:");
+                Console.WriteLine($"{totalMotos} Moto está no estacionamento.");
+            }
+            else
+            {
+                Console.WriteLine("Não há motos estacionadas.");
+            }
+        }
+
+
+
 
 
         public void ListarVeiculosMoto()

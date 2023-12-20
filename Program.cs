@@ -33,7 +33,9 @@ internal class Program
             Console.WriteLine("5 - Listar Carro");
             Console.WriteLine("6 - Listar Moto");
             Console.WriteLine("7 - Listar Carros e Motos");
-            Console.WriteLine("8 - Encerrar");
+            Console.WriteLine("8 - Quantidade de Carros");
+            Console.WriteLine("9 - Quantidade de Motos");
+            Console.WriteLine("10 - Encerrar");
 
             switch (Console.ReadLine())
             {
@@ -66,6 +68,14 @@ internal class Program
                     break;
 
                 case "8":
+                    es.VerificarQuantosCarrosTem();
+                    break;
+
+                case "9":
+                    es.VerificarQuantasMotosTem();
+                    break;
+
+                case "10":
                     exibirMenu = false;
                     break;
 
@@ -79,5 +89,5 @@ internal class Program
         }
 
         Console.WriteLine("O programa se encerrou");
-    }
+    }   
 }
