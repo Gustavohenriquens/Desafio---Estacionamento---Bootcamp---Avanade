@@ -1,9 +1,10 @@
 ﻿using projeto_estacionamento.Models;
 
-internal class Program
+public class Program
 {
     private static void Main(string[] args)
     {
+        
         Console.OutputEncoding = System.Text.Encoding.UTF8;
 
         decimal precoInicial = 0;
@@ -16,78 +17,120 @@ internal class Program
         Console.WriteLine("Digite o Preço por Hora:");
         precoPorHora = Convert.ToDecimal(Console.ReadLine());
 
+        Estacionamento_Carro carro = new Estacionamento_Carro(precoInicial, precoPorHora);
 
-        Estacionamento es = new Estacionamento(precoInicial, precoPorHora);
+        Estacionamento_Moto moto = new Estacionamento_Moto(precoInicial, precoPorHora);
 
-        string opcao = string.Empty;
-        bool exibirMenu = true;
+
+            bool exibirMenu = true;
 
         while (exibirMenu)
         {
             Console.Clear();
             Console.WriteLine("Digite a sua opção:");
-            Console.WriteLine("1- Cadastrar Carro");
-            Console.WriteLine("2 - Cadastrar Moto");
-            Console.WriteLine("3 - Remover Carro");
-            Console.WriteLine("4 - Remover Moto");
-            Console.WriteLine("5 - Listar Carro");
-            Console.WriteLine("6 - Listar Moto");
-            Console.WriteLine("7 - Listar Carros e Motos");
-            Console.WriteLine("8 - Quantidade de Carros");
-            Console.WriteLine("9 - Quantidade de Motos");
-            Console.WriteLine("10 - Encerrar");
+            Console.WriteLine("1-  Carro");
+            Console.WriteLine("2 - Moto");
+            Console.WriteLine("3 - Encerrar");
+
 
             switch (Console.ReadLine())
             {
-                case "1":
-                    es.AdicionarVeiculoCarro();
+                    case "1":
+                    GerenciarVeiculosCarro(carro);   
                     break;
 
-                case "2":
-                    es.AdicionarVeiculoMoto();
+                    case "2" :
+                    GerenciarVeiculosMoto(moto);
                     break;
 
-                case "3":
-                    es.RemoverVeiculoCarro();
-                    break;
-
-                case "4":
-                    es.RemoverVeiculoMoto();
-                    break;
-
-                case "5":
-                    es.ListarVeiculosCarro();
-                    break;
-
-                case "6":
-                    es.ListarVeiculosMoto();
-                    break;
-
-                case "7":
-                    es.ListarTodos();
-                    break;
-
-                case "8":
-                    es.VerificarQuantosCarrosTem();
-                    break;
-
-                case "9":
-                    es.VerificarQuantasMotosTem();
-                    break;
-
-                case "10":
+                    case "3":
                     exibirMenu = false;
                     break;
 
                 default:
                     Console.WriteLine("Opção inválida");
                     break;
-            }
-
+            }           
             Console.WriteLine("Pressione uma tecla para continuar");
             Console.ReadLine();
         }
 
         Console.WriteLine("O programa se encerrou");
+    
+    }
+
+    static void GerenciarVeiculosCarro(Estacionamento_Carro carro)
+    {
+        while (true)
+        {
+            Console.WriteLine("Escolha uma opção:");
+            Console.WriteLine("1. Adicionar Veículo");
+            Console.WriteLine("2. Listar Veículos");
+            Console.WriteLine("3. Quantidade de Veículos");
+            Console.WriteLine("4. Remover Veículo");
+            Console.WriteLine("5. Voltar ao Menu Principal");
+
+            string escolha = Console.ReadLine();
+
+            switch (escolha)
+            {
+                case "1":
+                    carro.AdicionarVeiculo();
+                    break;
+                case "2":
+                    carro.ListarVeiculos();
+                    break;
+                case "3":
+                    carro.VerificarQuantosVeiculosTem();
+                    break;
+                case "4":
+                    carro.RemoverVeiculo();
+                    break;
+                case "5":
+                    return; 
+                default:
+                    Console.WriteLine("Opção inválida. Tente novamente.");
+                    break;
+            }
+        }
+    }
+
+
+
+        static void GerenciarVeiculosMoto(Estacionamento_Moto moto)
+    {
+        while (true)
+        {
+            Console.WriteLine("Escolha uma opção:");
+            Console.WriteLine("1. Adicionar Veículo");
+            Console.WriteLine("2. Listar Veículos");
+            Console.WriteLine("3. Quantidade de Veículos");
+            Console.WriteLine("4. Remover Veículo");
+            Console.WriteLine("5. Voltar ao Menu Principal");
+
+            string escolha = Console.ReadLine();
+
+            switch (escolha)
+            {
+                case "1":
+                    moto.AdicionarVeiculo();
+                    break;
+                case "2":
+                    moto.ListarVeiculos();
+                    break;
+                case "3":
+                    moto.VerificarQuantosVeiculosTem();
+                    break;
+                case "4":
+                    moto.RemoverVeiculo();
+                    break;
+                case "5":
+                    return; 
+                default:
+                    Console.WriteLine("Opção inválida. Tente novamente.");
+                    break;
+            }
+        }
+    
     }   
 }
