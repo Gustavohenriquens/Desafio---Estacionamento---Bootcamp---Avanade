@@ -10,11 +10,12 @@ public class Program
         decimal precoInicial = 0;
         decimal precoPorHora = 0;
 
-        Console.WriteLine("Seja bem vindo ao sistema de estacionamento!\n" +
-                          "Digite o Preço Inicial:");
+        Console.WriteLine("SEJA BEM VINDO AO NOSSO SISTEMA DE ESTACIONAMENTO!\n\n" +
+                          "DIGITE O PREÇO INICIAL :");
         precoInicial = Convert.ToDecimal(Console.ReadLine());
+        Console.WriteLine();
 
-        Console.WriteLine("Digite o Preço por Hora:");
+        Console.WriteLine("DIGITE O PREÇO POR HORA :");
         precoPorHora = Convert.ToDecimal(Console.ReadLine());
 
         Estacionamento_Carro carro = new Estacionamento_Carro(precoInicial, precoPorHora);
@@ -27,19 +28,21 @@ public class Program
         while (exibirMenu)
         {
             Console.Clear();
-            Console.WriteLine("Digite a sua opção:");
-            Console.WriteLine("1-  Carro");
-            Console.WriteLine("2 - Moto");
-            Console.WriteLine("3 - Encerrar");
+            Console.WriteLine("DIGITE A SUA OPÇÃO: \n");
+            Console.WriteLine("1 - CARRO");
+            Console.WriteLine("2 - MOTO");
+            Console.WriteLine("3 - ENCERRAR");
 
 
-            switch (Console.ReadLine())
+            switch (Console.ReadLine())      
             {
                     case "1":
-                    GerenciarVeiculosCarro(carro);   
+                    Console.WriteLine("----- VOCÊ ESTÁ NO ESTACIONAMENTO DE CARROS -----");
+                    GerenciarVeiculosCarro(carro);
                     break;
 
                     case "2" :
+                    Console.WriteLine("----- VOCÊ ESTÁ NO ESTACIONAMENTO DE MOTOS -----");
                     GerenciarVeiculosMoto(moto);
                     break;
 
@@ -48,14 +51,15 @@ public class Program
                     break;
 
                 default:
-                    Console.WriteLine("Opção inválida");
+                Console.WriteLine();
+                    Console.WriteLine("OPÇÃO INVALIDA! TENTE NOVAMENTE!");
                     break;
             }           
             Console.WriteLine("Pressione uma tecla para continuar");
             Console.ReadLine();
         }
 
-        Console.WriteLine("O programa se encerrou");
+        Console.WriteLine("O PROGRAMA SE ENCERROU!");
     
     }
 
@@ -63,12 +67,13 @@ public class Program
     {
         while (true)
         {
-            Console.WriteLine("Escolha uma opção:");
-            Console.WriteLine("1. Adicionar Veículo");
-            Console.WriteLine("2. Listar Veículos");
-            Console.WriteLine("3. Quantidade de Veículos");
-            Console.WriteLine("4. Remover Veículo");
-            Console.WriteLine("5. Voltar ao Menu Principal");
+            Console.WriteLine("ESCOLHA UMA OPÇÃO:");
+            Console.WriteLine();
+            Console.WriteLine("1 - ADICIONAR CARRO");
+            Console.WriteLine("2 - LISTAR TODOS OS CARROS");
+            Console.WriteLine("3 - QUANTIDADE DE CARROS");
+            Console.WriteLine("4 - REMOVER CARRO");
+            Console.WriteLine("5 - VOLTAR AO MENU PRINCIPAL");
 
             string escolha = Console.ReadLine();
 
@@ -89,7 +94,7 @@ public class Program
                 case "5":
                     return; 
                 default:
-                    Console.WriteLine("Opção inválida. Tente novamente.");
+                    Console.WriteLine("OPÇÃO INVALIDA! TENTE NOVAMENTE!");
                     break;
             }
         }
@@ -101,12 +106,13 @@ public class Program
     {
         while (true)
         {
-            Console.WriteLine("Escolha uma opção:");
-            Console.WriteLine("1. Adicionar Veículo");
-            Console.WriteLine("2. Listar Veículos");
-            Console.WriteLine("3. Quantidade de Veículos");
-            Console.WriteLine("4. Remover Veículo");
-            Console.WriteLine("5. Voltar ao Menu Principal");
+            Console.WriteLine("ESCOLHA UMA OPÇÃO:");
+            Console.WriteLine();
+            Console.WriteLine("1 - ADICIONAR MOTO");
+            Console.WriteLine("2 - LISTAR TODAS AS MOTOS");
+            Console.WriteLine("3 - QUANTIDADE DE MOTOS");
+            Console.WriteLine("4 - REMOVER MOTO");
+            Console.WriteLine("5 - VOLTAR AO MENU PRINCIPAL");
 
             string escolha = Console.ReadLine();
 
@@ -127,7 +133,7 @@ public class Program
                 case "5":
                     return; 
                 default:
-                    Console.WriteLine("Opção inválida. Tente novamente.");
+                    Console.WriteLine("OPÇÃO INVALIDA! TENTE NOVAMENTE!.");
                     break;
             }
         }

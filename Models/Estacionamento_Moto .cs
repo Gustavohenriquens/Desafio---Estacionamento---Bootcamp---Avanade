@@ -23,9 +23,11 @@ namespace projeto_estacionamento.Models
 
         public void AdicionarVeiculo()
         {
-            Console.WriteLine($"Digite a placa da sua Moto para estacionar:"); 
+            Console.WriteLine();
+            Console.WriteLine($"DIGITE A PLACA DA SUA MOTO PARA ESTACIONAR :"); 
             string placaMoto = Console.ReadLine().ToUpper();
             veiculoMoto.Add(placaMoto);
+            Console.WriteLine();
         }
 
 
@@ -33,43 +35,57 @@ namespace projeto_estacionamento.Models
         {
             if(veiculoMoto.Any())
             {
-                Console.WriteLine($"As Motos estacionadas são:");
+                Console.WriteLine();
+                Console.WriteLine($"AS MOTOS ESTACIONADAS SÃO :");
 
+
+                int cont = 1;
                 foreach (string item in veiculoMoto)
                 {
-                    Console.WriteLine($"Moto = {item}");
+                    Console.WriteLine($"MOTO = {item}");
+                    cont++;
                 }
+                Console.WriteLine();
             }
             else
             {
-                 Console.WriteLine("Não há veículos estacionados.");
+                Console.WriteLine();
+                Console.WriteLine("NÃO HÁ MOTOS ESTACIONADAS!");
+                Console.WriteLine();
             }
         }
 
 
-                public void VerificarQuantosVeiculosTem()
+        public void VerificarQuantosVeiculosTem()
         {
             int totalMotos = veiculoMoto.Count;
 
             if(totalMotos > 1)
             {
-                Console.WriteLine($"Total de motos estacionadas:");
+                Console.WriteLine();
+                Console.WriteLine($"TOTAL DE MOTOS ESTACIONADAS :");
                 Console.WriteLine($"{totalMotos} Motos estão no estacionamento.");
+                Console.WriteLine();
             }
             else if(totalMotos == 1)
             {
-                Console.WriteLine($"Total de motos estacionadas:");
+                Console.WriteLine();
+                Console.WriteLine($"TOTAL DE MOTOS ESTACIONADAS :");
                 Console.WriteLine($"{totalMotos} Moto está no estacionamento.");
+                Console.WriteLine();
             }
             else
             {
-                Console.WriteLine("Não há motos estacionadas.");
+                Console.WriteLine();
+                Console.WriteLine("NÃO HÁ MOTOS ESTACIONADAS!");
+                Console.WriteLine();
             }
         }
 
         public void RemoverVeiculo()
         {
-            Console.WriteLine("Digite a placa do veículo para remover:");
+            Console.WriteLine();
+            Console.WriteLine("DIGITE A PLACA DO VEÍCULO PARA REMOVER :");
 
             string removePlacaMoto = Console.ReadLine().ToUpper();
             string placaMoto = removePlacaMoto;
@@ -77,18 +93,23 @@ namespace projeto_estacionamento.Models
 
             if (veiculoMoto.Any(x => x.ToUpper() == placaMoto.ToUpper()))
             {
-                Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
+                Console.WriteLine();
+                Console.WriteLine("DIGITE A QUANTIDADE DE HORAS QUE O VEÍCULO PERMANECEU ESTACIONADO :");
 
 
                 int horas = Convert.ToInt32(Console.ReadLine());    
                 decimal valorTotal = precoPorHora * horas + precoInicial ;  
 
                 veiculoMoto.Remove(placaMoto);
-                Console.WriteLine($"O veículo {placaMoto} foi removido e o preço total foi de: R$ {valorTotal}");
+                Console.WriteLine();
+                Console.WriteLine($"O VEÍCULO {placaMoto} FOI REMOVIDO E O PREÇO TOTAL FOI DE : R$ {valorTotal}");
+                Console.WriteLine();
             }
             else
             {
-                Console.WriteLine("Desculpe, esse veículo não está estacionado aqui. Confira se digitou a placa corretamente");
+                Console.WriteLine();
+                Console.WriteLine("DESCULPE, ESSE VEÍCULO NÃO ESTÁ ESTACIONADO AQUI! CONFIRA SE DIGITOU A PLACA CORRETAMENTE.");
+                Console.WriteLine();
             }
         }
 
