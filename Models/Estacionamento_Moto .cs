@@ -23,11 +23,22 @@ namespace projeto_estacionamento.Models
 
         public void AdicionarVeiculo()
         {
+            if(veiculoMoto.Count < 5)
+            {
+
             Console.WriteLine();
             Console.WriteLine($"DIGITE A PLACA DA SUA MOTO PARA ESTACIONAR :"); 
             string placaMoto = Console.ReadLine().ToUpper();
             veiculoMoto.Add(placaMoto);
             Console.WriteLine();
+
+            }
+            else
+            {
+                Console.WriteLine("NÃO POSSUI MAIS VAGAS! VAGAS PREENCHIDAS!" +
+                $" APERTE (5) PARA VERIFICAR AS VAGAS");
+            }
+
         }
 
 
@@ -113,6 +124,22 @@ namespace projeto_estacionamento.Models
             }
         }
 
+        public void VerificarSeExisteVaga()
+        {
+            if(veiculoMoto.Any())
+            {
+                Console.WriteLine();
+                Console.WriteLine("CARROS ESTACIONADOS :");
+                foreach(string item in veiculoMoto)
+                {
+                    Console.WriteLine($"- {item}");
+                }
+
+                Console.WriteLine();
+                int totalMotos = 5 - veiculoMoto.Count ;
+                Console.WriteLine("TOTAL DE VAGAS = " + totalMotos);
+            }
+        }
         
     }
 }

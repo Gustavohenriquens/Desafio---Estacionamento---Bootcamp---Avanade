@@ -11,5 +11,6 @@ namespace projeto_estacionamento.Models
         void RemoverVeiculo();
         void ListarVeiculos();
         void VerificarQuantosVeiculosTem(); 
+        void VerificarSeExisteVaga();
     }
 }

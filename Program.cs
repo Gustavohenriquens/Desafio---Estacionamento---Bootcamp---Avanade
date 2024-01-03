@@ -73,7 +73,8 @@ public class Program
             Console.WriteLine("2 - LISTAR TODOS OS CARROS");
             Console.WriteLine("3 - QUANTIDADE DE CARROS");
             Console.WriteLine("4 - REMOVER CARRO");
-            Console.WriteLine("5 - VOLTAR AO MENU PRINCIPAL");
+            Console.WriteLine("5 - VERIFICAR QUANTAS VAGAS)");
+            Console.WriteLine("6 - VOLTAR AO MENU PRINCIPAL");
 
             string escolha = Console.ReadLine();
 
@@ -92,6 +93,9 @@ public class Program
                     carro.RemoverVeiculo();
                     break;
                 case "5":
+                    carro.VerificarSeExisteVaga();
+                    break;
+                case "6":
                     return; 
                 default:
                     Console.WriteLine("OPÇÃO INVALIDA! TENTE NOVAMENTE!");
@@ -112,7 +116,9 @@ public class Program
             Console.WriteLine("2 - LISTAR TODAS AS MOTOS");
             Console.WriteLine("3 - QUANTIDADE DE MOTOS");
             Console.WriteLine("4 - REMOVER MOTO");
-            Console.WriteLine("5 - VOLTAR AO MENU PRINCIPAL");
+            Console.WriteLine("5 - VERIFICAR QUANTAS VAGAS");
+            Console.WriteLine("6 - VOLTAR AO MENU PRINCIPAL");
+
 
             string escolha = Console.ReadLine();
 
@@ -131,6 +137,9 @@ public class Program
                     moto.RemoverVeiculo();
                     break;
                 case "5":
+                    moto.VerificarSeExisteVaga();
+                    break;
+                case "6":
                     return; 
                 default:
                     Console.WriteLine("OPÇÃO INVALIDA! TENTE NOVAMENTE!.");

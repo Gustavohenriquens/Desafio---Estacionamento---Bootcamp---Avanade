@@ -13,20 +13,30 @@ namespace projeto_estacionamento.Models
 
         private List<string> veiculoCarro = new List<string>(); 
 
-
-
         public Estacionamento_Carro (decimal precoInicial, decimal precoPorHora)
         {
             this.precoInicial = precoInicial;    
             this.precoPorHora = precoPorHora;              
         }   
+
+
         public void AdicionarVeiculo()
         {
+            if(veiculoCarro.Count < 5)
+            {
+
             Console.WriteLine();
             Console.WriteLine($"DIGITE A PLACA DO SEU CARRO PARA ESTACIONAR :"); 
             string placaCarro = Console.ReadLine().ToUpper();
             veiculoCarro.Add(placaCarro);
-            Console.WriteLine();
+            Console.WriteLine();   
+
+            }
+            else
+            {
+                Console.WriteLine("NÃO POSSUI MAIS VAGAS! VAGAS PREENCHIDAS!" +
+                $" APERTE (5) PARA VERIFICAR AS VAGAS");
+            }
             
         }
 
@@ -110,6 +120,25 @@ namespace projeto_estacionamento.Models
                 Console.WriteLine();
                 Console.WriteLine("DESCULPE, ESSE VEÍCULO NÃO ESTÁ ESTACIONADO AQUI! CONFIRA SE DIGITOU A PLACA CORRETAMENTE.");
                 Console.WriteLine();
+            }
+
+        }
+
+        public void VerificarSeExisteVaga()
+        {
+
+            if(veiculoCarro.Any())
+            {
+                Console.WriteLine();
+                Console.WriteLine("CARROS ESTACIONADOS :");
+                foreach(string item in veiculoCarro)
+                {
+                    Console.WriteLine($"- {item}");
+                }
+
+                Console.WriteLine();
+                int totalCarros = 5 - veiculoCarro.Count ;
+                Console.WriteLine("TOTAL DE VAGAS = " + totalCarros);
             }
 
         }
