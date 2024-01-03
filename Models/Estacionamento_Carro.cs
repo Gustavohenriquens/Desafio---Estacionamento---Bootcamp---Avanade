@@ -22,13 +22,13 @@ namespace projeto_estacionamento.Models
 
         public void AdicionarVeiculo()
         {
-            if(veiculoCarro.Count < 5)
+            if(veiculoCarro.Count < 10)
             {
 
             Console.WriteLine();
             Console.WriteLine($"DIGITE A PLACA DO SEU CARRO PARA ESTACIONAR :"); 
             string placaCarro = Console.ReadLine().ToUpper();
-            veiculoCarro.Add(placaCarro);
+            veiculoCarro.Add(placaCarro + " Horário de Entrada = " + DateTime.Now.ToString("HH:mm dd/MM/yyyy"));
             Console.WriteLine();   
 
             }
@@ -50,7 +50,7 @@ namespace projeto_estacionamento.Models
                 int cont = 1;
                 foreach(string item in veiculoCarro)
                 {
-                    Console.WriteLine($"{cont}° CARRO = {item}");
+                    Console.WriteLine($"{cont}° CARRO = {item} ");
                     cont++;
                 }
                 Console.WriteLine();
@@ -137,7 +137,7 @@ namespace projeto_estacionamento.Models
                 }
 
                 Console.WriteLine();
-                int totalCarros = 5 - veiculoCarro.Count ;
+                int totalCarros = 10 - veiculoCarro.Count ;
                 Console.WriteLine("TOTAL DE VAGAS = " + totalCarros);
             }
 

@@ -23,7 +23,7 @@ namespace projeto_estacionamento.Models
 
         public void AdicionarVeiculo()
         {
-            if(veiculoMoto.Count < 5)
+            if(veiculoMoto.Count < 10)
             {
 
             Console.WriteLine();
@@ -136,7 +136,7 @@ namespace projeto_estacionamento.Models
                 }
 
                 Console.WriteLine();
-                int totalMotos = 5 - veiculoMoto.Count ;
+                int totalMotos = 10 - veiculoMoto.Count ;
                 Console.WriteLine("TOTAL DE VAGAS = " + totalMotos);
             }
         }

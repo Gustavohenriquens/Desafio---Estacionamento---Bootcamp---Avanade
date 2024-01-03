@@ -18,13 +18,18 @@ public class Program
         Console.WriteLine("DIGITE O PREÇO POR HORA :");
         precoPorHora = Convert.ToDecimal(Console.ReadLine());
 
+
+        //// ESTACIANDO CARRO ////
         Estacionamento_Carro carro = new Estacionamento_Carro(precoInicial, precoPorHora);
 
+        //// ESTACIANDO MOTO ////  
         Estacionamento_Moto moto = new Estacionamento_Moto(precoInicial, precoPorHora);
 
 
-            bool exibirMenu = true;
 
+        //// EXIBINDO O MENU INTERATIVO ////
+
+        bool exibirMenu = true;
         while (exibirMenu)
         {
             Console.Clear();
@@ -63,6 +68,9 @@ public class Program
     
     }
 
+
+    //// ESTACIONAMENTO DO CARRO ////
+
     static void GerenciarVeiculosCarro(Estacionamento_Carro carro)
     {
         while (true)
@@ -73,7 +81,7 @@ public class Program
             Console.WriteLine("2 - LISTAR TODOS OS CARROS");
             Console.WriteLine("3 - QUANTIDADE DE CARROS");
             Console.WriteLine("4 - REMOVER CARRO");
-            Console.WriteLine("5 - VERIFICAR QUANTAS VAGAS)");
+            Console.WriteLine("5 - VERIFICAR QUANTAS VAGAS");
             Console.WriteLine("6 - VOLTAR AO MENU PRINCIPAL");
 
             string escolha = Console.ReadLine();
@@ -105,7 +113,7 @@ public class Program
     }
 
 
-
+        //// ESTACIONAMENTO DA MOTO ////
         static void GerenciarVeiculosMoto(Estacionamento_Moto moto)
     {
         while (true)
