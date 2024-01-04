@@ -12,5 +12,6 @@ namespace projeto_estacionamento.Models
         void ListarVeiculos();
         void VerificarQuantosVeiculosTem(); 
         void VerificarSeExisteVaga();
+        void BuscarVeiculoPorPlaca();
     }
 }

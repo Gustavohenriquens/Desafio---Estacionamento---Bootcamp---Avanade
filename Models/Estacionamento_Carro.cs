@@ -10,9 +10,10 @@ namespace projeto_estacionamento.Models
 
         private decimal precoInicial = 0;
         private decimal precoPorHora = 0;
-
+        private string Placa {get; set;} 
+       
         private List<string> veiculoCarro = new List<string>(); 
-
+        
         public Estacionamento_Carro (decimal precoInicial, decimal precoPorHora)
         {
             this.precoInicial = precoInicial;    
@@ -28,7 +29,7 @@ namespace projeto_estacionamento.Models
             Console.WriteLine();
             Console.WriteLine($"DIGITE A PLACA DO SEU CARRO PARA ESTACIONAR :"); 
             string placaCarro = Console.ReadLine().ToUpper();
-            veiculoCarro.Add(placaCarro + " Horário de Entrada = " + DateTime.Now.ToString("HH:mm dd/MM/yyyy"));
+            veiculoCarro.Add(placaCarro + "|" + " Horário de Entrada = " + DateTime.Now.ToString("HH:mm dd/MM/yyyy"));
             Console.WriteLine();   
 
             }
@@ -142,6 +143,24 @@ namespace projeto_estacionamento.Models
             }
 
         }
-        
+
+        public void BuscarVeiculoPorPlaca()
+        {
+            Console.WriteLine();
+            Console.WriteLine("PROCURE SEU VEÍCULO CADASTRADO COM A PLACA : ");
+            string placaDigitada = Console.ReadLine().ToUpper();
+            string veiculoEncontrado = veiculoCarro.Find(v => v.Contains(placaDigitada));
+
+            Console.WriteLine();
+            if (veiculoEncontrado != null)
+            {
+                Console.WriteLine($"VEÍCULO ENCONTRADO : {veiculoEncontrado}");
+            }
+            else
+            {
+                Console.WriteLine($"CARRO COM PLACA {placaDigitada} NÃO ENCONTRADO.");
+            }
+            Console.WriteLine();
+        }
     }
 }

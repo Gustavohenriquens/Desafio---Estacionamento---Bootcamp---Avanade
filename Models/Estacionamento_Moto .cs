@@ -21,6 +21,7 @@ namespace projeto_estacionamento.Models
             this.precoPorHora = precoPorHora;
         }
 
+        
         public void AdicionarVeiculo()
         {
             if(veiculoMoto.Count < 10)
@@ -29,8 +30,8 @@ namespace projeto_estacionamento.Models
             Console.WriteLine();
             Console.WriteLine($"DIGITE A PLACA DA SUA MOTO PARA ESTACIONAR :"); 
             string placaMoto = Console.ReadLine().ToUpper();
-            veiculoMoto.Add(placaMoto);
-            Console.WriteLine();
+            veiculoMoto.Add(placaMoto + "|" + " Horário de Entrada = " + DateTime.Now.ToString("HH:mm dd/MM/yyyy"));
+            Console.WriteLine(); 
 
             }
             else
@@ -140,6 +141,25 @@ namespace projeto_estacionamento.Models
                 Console.WriteLine("TOTAL DE VAGAS = " + totalMotos);
             }
         }
-        
+
+        public void BuscarVeiculoPorPlaca()
+        {  
+             Console.WriteLine();
+            Console.WriteLine("PROCURE SEU VEÍCULO CADASTRADO COM A PLACA : ");
+            string placaDigitada = Console.ReadLine().ToUpper();
+            string veiculoEncontrado = veiculoMoto.Find(v => v.Contains(placaDigitada));
+
+            Console.WriteLine();
+            if (veiculoEncontrado != null)
+            {
+                Console.WriteLine($"VEÍCULO ENCONTRADO : {veiculoEncontrado}");
+            }
+            else
+            {
+                Console.WriteLine($"MOTO COM PLACA {placaDigitada} NÃO ENCONTRADO.");
+            }
+            Console.WriteLine();
+            
+        }
     }
 }
