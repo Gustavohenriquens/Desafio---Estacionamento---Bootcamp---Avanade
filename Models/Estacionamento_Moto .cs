@@ -30,8 +30,18 @@ namespace projeto_estacionamento.Models
             Console.WriteLine();
             Console.WriteLine($"DIGITE A PLACA DA SUA MOTO PARA ESTACIONAR :"); 
             string placaMoto = Console.ReadLine().ToUpper();
-            veiculoMoto.Add(placaMoto + "|" + " Horário de Entrada = " + DateTime.Now.ToString("HH:mm dd/MM/yyyy"));
-            Console.WriteLine(); 
+
+
+                if(!string.IsNullOrWhiteSpace(placaMoto))
+                {
+                    veiculoMoto.Add(placaMoto + "|" + " Horário de Entrada = " + DateTime.Now.ToString("HH:mm dd/MM/yyyy"));
+                    Console.WriteLine(); 
+                }
+                else
+                {
+                    Console.WriteLine("PLACA INVÁLIDA! A PLACA NÃO PODE ESTÁ VAZIA. ADCIONE UMA PLACA VÁLIDA.");
+                }
+
 
             }
             else
@@ -139,6 +149,11 @@ namespace projeto_estacionamento.Models
                 Console.WriteLine();
                 int totalMotos = 10 - veiculoMoto.Count ;
                 Console.WriteLine("TOTAL DE VAGAS = " + totalMotos);
+            }
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine("TOTAL DE VAGAS = 10 VAGAS ");
             }
         }
 

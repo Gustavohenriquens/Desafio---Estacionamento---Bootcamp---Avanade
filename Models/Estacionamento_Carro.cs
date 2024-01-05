@@ -29,9 +29,18 @@ namespace projeto_estacionamento.Models
             Console.WriteLine();
             Console.WriteLine($"DIGITE A PLACA DO SEU CARRO PARA ESTACIONAR :"); 
             string placaCarro = Console.ReadLine().ToUpper();
-            veiculoCarro.Add(placaCarro + "|" + " Horário de Entrada = " + DateTime.Now.ToString("HH:mm dd/MM/yyyy"));
-            Console.WriteLine();   
 
+
+                if(!string.IsNullOrWhiteSpace(placaCarro))
+                {
+                    veiculoCarro.Add(placaCarro + "|" + " Horário de Entrada = " + DateTime.Now.ToString("HH:mm dd/MM/yyyy"));
+                    Console.WriteLine();  
+                }
+                else
+                {
+                    Console.WriteLine("PLACA INVÁLIDA! A PLACA NÃO PODE ESTÁ VAZIA. ADCIONE UMA PLACA VÁLIDA.");
+                }
+ 
             }
             else
             {
@@ -140,6 +149,11 @@ namespace projeto_estacionamento.Models
                 Console.WriteLine();
                 int totalCarros = 10 - veiculoCarro.Count ;
                 Console.WriteLine("TOTAL DE VAGAS = " + totalCarros);
+            }
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine("TOTAL DE VAGAS = 10 VAGAS ");
             }
 
         }
