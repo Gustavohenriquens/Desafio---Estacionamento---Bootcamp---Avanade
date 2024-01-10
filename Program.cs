@@ -7,23 +7,23 @@ public class Program
         
         Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-        decimal precoInicial = 0;
-        decimal precoPorHora = 0;
+        decimal precoInicialDoEstacionamento = 0;
+        decimal precoPorHoraNoEstacionamento = 0;
 
         Console.WriteLine("SEJA BEM VINDO AO NOSSO SISTEMA DE ESTACIONAMENTO!\n\n" +
                           "DIGITE O PREÇO INICIAL :");
-        precoInicial = Convert.ToDecimal(Console.ReadLine());
+        precoInicialDoEstacionamento = Convert.ToDecimal(Console.ReadLine());
         Console.WriteLine();
 
         Console.WriteLine("DIGITE O PREÇO POR HORA :");
-        precoPorHora = Convert.ToDecimal(Console.ReadLine());
+        precoPorHoraNoEstacionamento = Convert.ToDecimal(Console.ReadLine());
 
 
         //// ESTACIANDO CARRO ////
-        Estacionamento_Carro carro = new Estacionamento_Carro(precoInicial, precoPorHora);
+        Estacionamento_Carro carro = new Estacionamento_Carro(precoInicialDoEstacionamento, precoPorHoraNoEstacionamento);
 
         //// ESTACIANDO MOTO ////  
-        Estacionamento_Moto moto = new Estacionamento_Moto(precoInicial, precoPorHora);
+        Estacionamento_Moto moto = new Estacionamento_Moto(precoInicialDoEstacionamento, precoPorHoraNoEstacionamento);
 
 
 
@@ -85,7 +85,7 @@ public class Program
             Console.WriteLine("6 - BUSCAR PLACA DO VEÍCULO");
             Console.WriteLine("7 - VOLTAR AO MENU PRINCIPAL");
 
-            string escolha = Console.ReadLine();
+            string? escolha = Console.ReadLine();
 
             switch (escolha)
             {
@@ -133,7 +133,7 @@ public class Program
             Console.WriteLine("7 - VOLTAR AO MENU PRINCIPAL");
 
 
-            string escolha = Console.ReadLine();
+            string? escolha = Console.ReadLine();
 
             switch (escolha)
             {
